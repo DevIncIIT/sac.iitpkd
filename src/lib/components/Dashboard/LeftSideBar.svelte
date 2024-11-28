@@ -28,8 +28,8 @@
 <nav class="left-sidebar">
 	<div class="d-flex justify-content-between">
 		<div class="left-logo d-flex align-items-center">
-			<img id="img-logo" src="SACLogo.png" alt="logo"/>
-			<img id="text-logo" src="SACTagline.png" alt="logo-text"/>
+			<img id="img-logo" src="/SACLogo.png" alt="logo"/>
+			<img id="text-logo" src="/SACTagline.png" alt="logo-text"/>
 		</div>
 		<button onclick={hamburger} aria-label="hamburgerButton" id="ham" class="p-4">
 			<i class="fa-solid fa-bars fa-2xl"></i>
@@ -40,7 +40,7 @@
 			{#each section_buttons_text as section_button_text, index}
 				<a onclick={() => handleClick(index)} href="/" class="text-black text-decoration-none web-link">
 					<li class="gap-3 d-flex align-items-center {($selectedInd === (index-1) || $selectedInd === (index+1)) ? 'AllButtons adjacentButtons' : 'AllButtons nonAdjacentButtons'} {$selectedInd === index ? 'selectedButton' : ''}">
-						<img class="icons" src="{section_button_text}.svg" alt="{section_button_text} icon"/>
+						<img class="icons" src="/{section_button_text}.svg" alt="{section_button_text} icon"/>
 						<span class="button-text">{section_button_text}</span>
 					</li>
 				</a>

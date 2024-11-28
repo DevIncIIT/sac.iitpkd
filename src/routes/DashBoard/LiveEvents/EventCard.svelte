@@ -106,6 +106,6 @@
 		display: block;
 		width: 190px;
 		height: 67px;
-		line-height: 0px;
+		/* line-height: 0px; */
 }
 </style>

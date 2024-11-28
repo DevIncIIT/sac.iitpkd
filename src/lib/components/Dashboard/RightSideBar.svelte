@@ -1,7 +1,4 @@
 <script>
-    // Import any subcomponents needed (e.g., LiveEventsCard)
-    import LiveEventsCard from './LiveEventsCard.svelte';
-  
     const events = [
       { title: 'Photoshop Intro', description: 'Lorem ipsum...', date: 'Date' },
       { title: 'Web Dev Bootcamp', description: 'Lorem ipsum...', date: 'Date' }
@@ -26,9 +23,9 @@
   
     <div class="live-events">
       <h3>Live Events</h3>
-      {#each events as event}
-        <LiveEventsCard {event} />
-      {/each}
+      <!-- {#each events as event}
+        <LiveEventsCard event={event} />
+      {/each} -->
     </div>
   
     <div class="activity-section">

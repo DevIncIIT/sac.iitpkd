@@ -1,7 +1,7 @@
 <script>
 	let {
 		Heading,
-		HeadingWithArrows,
+		// HeadingWithArrows,
 		Body,
 		content_lines,
 	}= $props();
