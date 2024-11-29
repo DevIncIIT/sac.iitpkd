@@ -1,3 +1,4 @@
+
 <script>
 	import Announcements from "./Component.svelte";
 	const pkg1 = {
@@ -22,19 +23,26 @@
 		Body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		content_lines: []
 	};
+	import Carousel1 from "./carousel.svelte"
+	const imgfiles={
+		imgurl:"/AcadBlock",
+		imgALT:"ACAD BLOCK",
+	}
 </script>
 
 <Header/>
 <div class="container">
 	<Announcements {...pkg1} />
+	<Carousel1 {...imgfiles}/>
 	<AboutUs {...pkg2} />
 	<Councils {...pkg3} />
 </div>
 <Footer/>
 
 <style>
-	/* :global(*){
-		background-color : white;
-		color : black ;
-	} */
+.container{
+	background-image: url(/HomeBG)
+}
+	
+
 </style>
