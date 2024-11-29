@@ -1,4 +1,3 @@
-<!-- Carousel1.svelte -->
 <script>
   export let images = []; // An array of image objects with url and alt properties
 </script>
