@@ -64,7 +64,6 @@
 </div>
 
 <style>
-    @import 'bootstrap/dist/css/bootstrap.min.css';
     .bg-container {
         background-image: url("/bg-4.jpg");
         background-size: cover;

@@ -51,8 +51,6 @@
 
 
 <style>
-    @import 'bootstrap/dist/css/bootstrap.min.css';
-	@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 	.left-logo {
 		width: 322px;
 	}
