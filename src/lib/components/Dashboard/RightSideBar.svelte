@@ -46,6 +46,33 @@
       {#each Array(31).fill(1) as date}
         <span>{date}</span>
       {/each}
+    const events = [
+      { title: 'Photoshop Intro', description: 'Lorem ipsum...', date: 'Date' },
+      { title: 'Web Dev Bootcamp', description: 'Lorem ipsum...', date: 'Date' }
+    ];
+  
+    const activities = [
+      { user: 'User1', action: 'has replied on', topic: 'VACC' },
+      { user: 'User2', action: 'has replied on', topic: 'Voxel' }
+    ];
+  </script>
+  
+  <div class="right-sidebar">
+    <div class="user-info">
+      <img src="/path/to/profile-image.jpg" alt="Profile" class="profile-img" />
+      <span class="username">Username</span>
+    </div>
+  
+    <div class="calendar-section">
+      <!-- Placeholder for Calendar -->
+      <p>Calendar goes here</p>
+    </div>
+  
+    <div class="live-events">
+      <h3>Live Events</h3>
+      <!-- {#each events as event}
+        <LiveEventsCard event={event} />
+      {/each} -->
     </div>
   </div>
 
