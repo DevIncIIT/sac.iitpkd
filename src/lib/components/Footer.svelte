@@ -1,9 +1,9 @@
 <div class="footer">
   <div style="display: flex; align-items: center;">
-    <img src="/SACLogo.png" alt="SAC logo" style="width: 94px; height: 111px; margin-right: 10px;" />
+    <img src="/SACLogo-removebg-preview.png" alt="SAC logo" style="width: 94px; height: 111px; margin-right: 10px;" />
   
     <div style="display: grid;">
-      <img src="/SACTagline.png" alt="SAC Tagline" style="width: 291px; height: 39px;" />
+      <img src="/SACTagline-removebg-preview.png" alt="SAC Tagline" style="width: 291px; height: 39px;" />
       <div style="border: 1px solid rgba(255, 255, 255, 1); width: 343.67px; height: 0px; margin-top: 10px;"></div>
       <p style="color: white; margin-top: 10px;">Copyright © 2023. All rights reserved.</p>
     </div>
