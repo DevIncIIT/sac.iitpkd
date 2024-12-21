@@ -6,8 +6,6 @@
     import Footer from "$lib/components/Footer.svelte";
     
     
-    
-    
     const announcements = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -15,21 +13,7 @@
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     ];
     // import Home from "$lib/components/Home.svelte";
-    const images = [
-    {
-        url: "/carousel.jpeg",
-        alt: 'bhupendra jogi'
-    },
-    {
-        url: "/carousel.jpeg",
-        // url: 'https://uploads.dailydot.com/2024/07/side-eye-cat.jpg?q=65&auto=format&w=1600&ar=2:1&fit=crop',
-        alt: 'bhupendra jogi'
-    },
-    {
-        url: "/carousel.jpeg",
-        // url: 'https://uploads.dailydot.com/2024/07/side-eye-cat.jpg?q=65&auto=format&w=1600&ar=2:1&fit=crop',
-        alt: 'bhupendra jogi'
-    }]
+    const images = ["/carousel.jpeg","/carousel.jpeg","/carousel.jpeg"]
 </script>
 <Header />
 <AnnoucementList {announcements} />
