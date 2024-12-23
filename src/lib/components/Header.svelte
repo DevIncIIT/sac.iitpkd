@@ -1,3 +1,7 @@
+<script>
+  import { goto } from '$app/navigation';
+</script>
+
 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px;">
   <div style="display: flex; align-items: center;">
     <img src="/SACLogo.png" alt="SAC logo" style="width:94px; height: 111px; margin-right: 10px;" />
@@ -13,7 +17,7 @@
 
 
   <div>
-    <button class="Signin" >Sign in</button>
+    <button class="Signin" on:click={() => goto('/login')} >Sign in</button>
   </div>
 </div>
 <style>
