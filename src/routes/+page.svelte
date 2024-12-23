@@ -20,7 +20,7 @@
     // Hide the loading page after 3 seconds
     setTimeout(() => {
         isLoading = false;
-    }, 3000);
+    }, 1000);
 </script>
 
 {#if isLoading}
