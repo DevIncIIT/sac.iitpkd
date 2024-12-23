@@ -27,9 +27,9 @@
 
 <nav class="left-sidebar">
 	<div class="d-flex justify-content-between">
-		<div class="left-logo d-flex align-items-center">
-			<img id="img-logo" src="/SACLogo.png" alt="logo"/>
-			<img id="text-logo" src="/SACTagline.png" alt="logo-text"/>
+		<div class="left-logo d-flex align-items-center mt-4 mb-4 ml-3">
+			<img id="img-logo" src="/SACLogo.svg" alt="logo"/>
+			<img id="text-logo" src="/SACTagline.svg" alt="logo-text"/>
 		</div>
 		<button onclick={hamburger} aria-label="hamburgerButton" id="ham" class="p-4">
 			<i class="fa-solid fa-bars fa-2xl"></i>
@@ -38,7 +38,7 @@
 	<div class:section-buttons={$hamOpened} class:altSection-buttons={!($hamOpened)}>
 		<ul class="p-0">
 			{#each section_buttons_text as section_button_text, index}
-				<a onclick={() => handleClick(index)} href="/" class="text-black text-decoration-none web-link">
+				<a onclick={() => handleClick(index)} href={index === 0 ? `/DashBoard/` : index === 4 ? `/DashBoard/LiveEvents` : `/DashBoard/${section_button_text}`} class="text-black text-decoration-none web-link">
 					<li class="gap-3 d-flex align-items-center {($selectedInd === (index-1) || $selectedInd === (index+1)) ? 'AllButtons adjacentButtons' : 'AllButtons nonAdjacentButtons'} {$selectedInd === index ? 'selectedButton' : ''}">
 						<img class="icons" src="/{section_button_text}.svg" alt="{section_button_text} icon"/>
 						<span class="button-text">{section_button_text}</span>

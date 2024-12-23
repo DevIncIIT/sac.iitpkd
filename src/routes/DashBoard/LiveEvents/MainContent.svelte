@@ -28,7 +28,7 @@
 		font-weight: 700;
 		font-size: 32px;
 		line-height: 48px;
-		margin-left: 5px;
+		margin-left: 8px;
 		margin-bottom: 48px;
 		}
 </style>
