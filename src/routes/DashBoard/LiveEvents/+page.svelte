@@ -2,7 +2,7 @@
   import MainContent from './MainContent.svelte';
 </script>
 
-<div class="app-container">
+<div class="mt-3 ml-[2rem]">
   <MainContent />
 </div>
 
