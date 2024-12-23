@@ -1,7 +1,7 @@
 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px;">
   <div style="display: flex; align-items: center;">
-    <img src="/SACLogo.png" alt="SAC logo" style="width:94px; height: 111px; margin-right: 10px;" />
-    <img src="/SACTagline.png" alt="SAC Tagline" style="width:291; height: 39px;" />
+    <img src="/SACLogo.svg" alt="SAC logo" style="width:94px; height: 111px; margin-right: 10px;" />
+    <img src="/SACTagline.svg" alt="SAC Tagline" style="width:291; height: 39px;" />
   </div>
 
   <div class="Center" style="display: flex; gap: 15px;">
