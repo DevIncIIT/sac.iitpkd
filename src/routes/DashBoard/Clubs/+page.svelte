@@ -1,1 +1,61 @@
-<h1>Clubs</h1>
+<script lang="ts">
+    import ClubCard from "./clubCard.svelte";
+
+    const myClubs = [
+        {
+            name: "YACC",
+            img: "/placeholderClub.png"
+        },
+        {
+            name: "YACC",
+            img: "/placeholderClub.png"
+        },
+        {
+            name: "YACC",
+            img: "/placeholderClub.png"
+        },
+        {
+            name: "YACC",
+            img: "/placeholderClub.png"
+        },
+        {
+            name: "YACC",
+            img: "/placeholderClub.png"
+        },
+    ]
+</script>
+
+<div class="main flex flex-col mb-5">
+    <h1 class="text-[2.5rem] font-semibold mt-[2.2rem] ml-[1rem]">CLUBS</h1>
+    <div class="clubs mt-[2.5rem] ml-[3rem] flex flex-col gap-5">
+        <div class="myClubs">
+            <p class="text-2xl mb-[1rem]">My Clubs</p>
+            <div class="flex gap-4 flex-wrap w-[50rem]">
+                {#each myClubs as club}
+                    <ClubCard clubName={club.name} clubImage={club.img} />
+                {/each}
+            </div>
+        </div>
+        <div class="otherhClubs">
+            <div class="othead flex justify-between pr-[2.5rem] mb-[1rem]">
+                <p class="text-2xl">Other Clubs</p>
+                <button class="viewAll text-xl">View All</button>
+            </div>
+            <div class="flex gap-4 flex-wrap w-[50rem]">
+                {#each myClubs as club}
+                    <ClubCard clubName={club.name} clubImage={club.img} />
+                {/each}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .viewAll{
+		background-color: rgba(243, 130, 33, 1);
+		width:117px ;
+		height:42px;
+		border-radius: 12px;
+        color: white;
+	}
+</style>
