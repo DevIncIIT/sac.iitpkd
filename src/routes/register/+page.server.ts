@@ -1,4 +1,4 @@
-import { REGISTER_URL } from '$lib/server/urls';
+import { REGISTER_URL } from '$lib/urls';
 import { redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 

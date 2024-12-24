@@ -1,23 +1,13 @@
-<script>
-    import ActivityCard from "./ActivityCard.svelte";
+<script lang="ts">
+    import type { AnnouncementResponse, EventResponse } from "$lib";
+    import AnnouncementSideCard from "./AnnouncementSideCard.svelte";
     import LiveEventCard from "./liveEventCard.svelte"
 
-    export let userName = 'Username';
+    export let userName;// = 'Username';
 
-    export let LiveEvent = {
-      img: "/placeholder.png",
-      title: "Phtoshop Intro",
-      club: "Voxel",
-      date: '10 Jan, 2025',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae laboriosam, architecto ad delectus suscipit, facere minima aperiam quae iusto perferendis, maiores natus in repellat. Dignissimos temporibus at alias fuga minus veritatis id?'
-    };
+    export let event_info: EventResponse;
 
-    export let Activity = {
-      img: "/placeholder.png",
-      name: "John Doe",
-      club: "YACC",
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat,'
-    }
+    export let announcement: AnnouncementResponse;
 </script>
 
 <div class="right-sidebar">
@@ -27,11 +17,13 @@
 </div>
     <div class="live_events">
       <p class="text-3xl my-3">Live Events</p>
-      <LiveEventCard LiveEvent={LiveEvent} />
+      {#if event_info}
+        <LiveEventCard event_info={event_info} />
+      {/if}
     </div>
     <div class="live_events">
       <p class="text-3xl my-3">Activity</p>
-      <ActivityCard Activity={Activity} />
+      <AnnouncementSideCard announcement={announcement} />
     </div>
 </div>
 

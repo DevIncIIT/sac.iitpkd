@@ -1,12 +1,16 @@
-<script>
+<script lang="ts">
     import LeftSideBar from "$lib/components/Dashboard/LeftSideBar.svelte";
     import RightSideBar from "$lib/components/Dashboard/RightSideBar.svelte";
+    import type { LayoutServerData } from "./$types";
+
+    let { data }: {data: LayoutServerData} = $props();
+    console.log(data);
 </script>
 
 <div class="main">
     <LeftSideBar/>
     <slot />
-    <RightSideBar />
+    <RightSideBar userName={data.profile.name} event_info={data.events[0]} announcement={data.announcements[0]}/>
 </div>
 
 <style>

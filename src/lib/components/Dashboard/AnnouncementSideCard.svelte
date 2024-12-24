@@ -1,21 +1,22 @@
-<script>
-    export let Activity;
+<script lang="ts">
+    import { image_link, type AnnouncementResponse } from "$lib";
+    export let announcement: AnnouncementResponse;
 </script>
 
 <div class="card w-[25rem]">
     <div class="card_header flex flex-col pb-2">
         <div class="author flex gap-3 items-center">
-            <img src={Activity.img} alt="profile-pic" class="rounded-5" style="height: 3rem"/>
+            <img src={image_link(announcement.id, "Announcement")} alt="profile-pic" class="rounded-5" style="height: 3rem"/>
             <div class="card_title">
                 <p>
-                    <span class="text-xl text-gray-700">{Activity.name}</span>
+                    <span class="text-xl text-gray-700">{announcement.title}</span>
                     <span class="text-lg">has replied on</span>
-                    <span class="text-lg font-semibold">{Activity.club}</span>
+                    <span class="text-lg font-semibold">{"announcement.club_name"}</span>
                 </p>
             </div>
         </div>
         <div class="content text-lg ml-[0.5rem]"> 
-            {Activity.description}
+            {announcement.content}
         </div>
     </div>
 </div>

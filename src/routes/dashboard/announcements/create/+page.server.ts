@@ -1,5 +1,5 @@
 // make a load function get list of clubs and returns an array of club names and ids
-import { CREATE_ANNOUNCEMENT_URL, GET_CLUBS_URL } from "$lib/server/urls";
+import { CREATE_ANNOUNCEMENT_URL, GET_CLUBS_URL } from "$lib/urls";
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
@@ -47,8 +47,6 @@ export const actions = {
         })
 
         if(response.ok) {
-            const {access_token} = await response.json();
-            cookies.set('jwt', access_token, {path: '/', maxAge: 60 * 60 * 24 * 7});
             return redirect(302, '/dashboard');
         } else {
             console.log(response.status);
