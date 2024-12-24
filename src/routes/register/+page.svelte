@@ -1,12 +1,11 @@
 <script>
     import Icon from "svelte-awesome/components/Icon.svelte";
     import userCircle from "svelte-awesome/icons/userCircle";
-    import { Card, Button, Label, Input, Checkbox } from 'flowbite-svelte';
-    // import { Button } from 'flowbite-svelte';
+    import { Card, Label, Input} from 'flowbite-svelte';
 </script>
 
 <div class="bg-container d-flex justify-content-center align-items-center">
-    <div class="card lgcard">
+    <div class="card lgcard  ">
         <div class="card-body">
             <div class="heading">
                 <p class="h4 my-3" style="text-align: center; bold: 700">
@@ -29,9 +28,13 @@
                     <div class="col-md-4 p-0" style="width: 22rem; ">
                         <Card class="border-0">
                             <form class="flex flex-col space-y-6" method="POST">
-                                <h3 class="text-xl font-medium text-gray-900 dark:text-white">Login in into your SAC Account</h3>
+                                <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create your SAC Account</h3>
                                 <Label class="space-y-1">
-                                    <span>User</span>
+                                    <span>Name</span>
+                                    <Input class="h-10 border-2" type="text" name="name" placeholder="" required />
+                                </Label>
+                                <Label class="space-y-1">
+                                    <span>Email</span>
                                     <Input class="h-10 border-2" type="email" name="email" placeholder="" required />
                                 </Label>
 
@@ -39,8 +42,7 @@
                                     <span>Password</span>
                                     <Input class="h-10 border-2" type="password" name="password" placeholder="" required />
                                 </Label>
-                                <button class="" type="submit">Login</button>
-                                <p>Not yet registered? <a class="text-blue-500" href="/register">Register</a></p>
+                                <p>Already registered? <a class="text-blue-500" href="/login">Login</a></p>
                                 <div class="all_btn items-start">
                                     <button class="btn">
                                         <img
