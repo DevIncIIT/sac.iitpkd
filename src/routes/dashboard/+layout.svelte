@@ -3,8 +3,16 @@
     import RightSideBar from "$lib/components/Dashboard/RightSideBar.svelte";
 </script>
 
-<div class="flex flex-row">
+<div class="main">
     <LeftSideBar/>
     <slot />
     <RightSideBar />
 </div>
+
+<style>
+    .main{
+        display: flex;
+        flex-direction: row;
+        flex: 1 2 1;
+    }
+</style>

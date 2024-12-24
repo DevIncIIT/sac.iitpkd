@@ -13,7 +13,7 @@ export const load = async ({ cookies }) => {
     if(response.ok) {
         const clubs = await response.json();
         return {clubs: clubs.map((club: any) => ({
-            value: club.id,
+            value: club.id.toString(),
             label: club.name
         }))};
     } else {
@@ -26,7 +26,7 @@ export const actions = {
         const formData = await request.formData();
         const title = formData.get('title');
         const content = formData.get('content');
-        const club = formData.get('club');
+        const club = formData.get('club') as string;
         if (!(title && content && club)) {
             return {
                 success: false,
@@ -37,11 +37,12 @@ export const actions = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${cookies.get('jwt')}`
             },
             body: JSON.stringify({
                 title,
                 content,
-                club
+                club_id: parseInt(club)
             })
         })
 
@@ -50,6 +51,9 @@ export const actions = {
             cookies.set('jwt', access_token, {path: '/', maxAge: 60 * 60 * 24 * 7});
             return redirect(302, '/dashboard');
         } else {
+            console.log(response.status);
+            const message = await response.text();
+            console.log(message);
             return {
                 success: false,
                 message: "Invalid email or password"

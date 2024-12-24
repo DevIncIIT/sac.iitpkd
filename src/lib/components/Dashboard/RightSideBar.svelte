@@ -22,7 +22,7 @@
 
 <div class="right-sidebar">
   <div class="d-flex justify-content-end items-center mr-4 mt-4">
-    <span style="color: #5E6060;" class="fs-5 fw-semibold">Username</span>
+    <span style="color: #5E6060;" class="fs-5 fw-semibold">{userName}</span>
     <img src="/placeholder.png" alt="profile-pic" class="rounded-5 ml-4"/>
 </div>
     <div class="live_events">
