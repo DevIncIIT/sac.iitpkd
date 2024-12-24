@@ -6,5 +6,5 @@
 <div class="flex flex-row">
     <LeftSideBar/>
     <slot />
-    <!-- <RightSideBar /> -->
+    <RightSideBar />
 </div>

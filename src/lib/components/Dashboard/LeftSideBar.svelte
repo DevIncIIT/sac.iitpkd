@@ -52,7 +52,7 @@
 
 <style>
 	.left-logo {
-		width: 322px;
+		width: 200px;
 	}
 
 	.adjacentButtons {
@@ -60,7 +60,7 @@
 	}
 
 	#img-logo {
-		width: 81px;
+		width: 75px;
 		height: 76px;
 	}
 
@@ -74,9 +74,14 @@
 	}
 
 	.AllButtons {
-		height: 80px;
+		height: 60px;
 		border-radius: 10px;
-		padding-left: 66px;
+		display: flex;
+		align-items: center;
+		padding: 10%;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		/* justify-content: center; */
 	}
 
 	.selectedButton {
@@ -91,12 +96,12 @@
 
 	.altSection-buttons {
 		display: none;
-		width: 322px;
+		width: 200px;
 	}
 
 	.section-buttons {
 		display: block;
-		width: 322px;
+		width: 200px;
 	}
 
 	@media screen and (min-width: 768px) 
