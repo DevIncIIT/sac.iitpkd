@@ -1,5 +1,5 @@
 // make a load function get list of clubs and returns an array of club names and ids
-import { CREATE_ANNOUNCEMENT_URL, GET_CLUBS_URL } from "$lib/urls";
+import { CREATE_ANNOUNCEMENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/urls";
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
@@ -27,12 +27,14 @@ export const actions = {
         const title = formData.get('title');
         const content = formData.get('content');
         const club = formData.get('club') as string;
+        const image = formData.get('image') as File;
         if (!(title && content && club)) {
             return {
                 success: false,
                 message: "Invalid form data"
             };
         }
+
         const response = await fetch(CREATE_ANNOUNCEMENT_URL, {
             method: 'POST',
             headers: {
@@ -47,7 +49,24 @@ export const actions = {
         })
 
         if(response.ok) {
-            return redirect(302, '/dashboard');
+            const announcement_response = await response.json();
+            const announcement_id = announcement_response.data;
+            const formData = new FormData();
+            formData.append('announcement_id', announcement_id);
+            formData.append('file', image);
+            const file_upload_response = await fetch(FILE_UPLOAD_URL, {
+                method: 'POST',
+                headers: {
+                    // 'Content-Type': 'multipart/form-data'
+                },
+                body: formData
+            })
+            if(file_upload_response.ok) {
+                return redirect(302, '/dashboard');
+            } else {
+                console.log(await file_upload_response.text());
+                return "sorry";
+            }
         } else {
             console.log(response.status);
             const message = await response.text();

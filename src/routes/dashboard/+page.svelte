@@ -17,7 +17,7 @@
 </script>
 
 <div class="container">
-    <div class="fs-3 fw-bold pl-9 mt-32" id="head1">DASHBOARD</div>
+    <div class="fs-3 fw-bold pl-9" id="head1">DASHBOARD</div>
     <div id="Announcements">
         <div class="d-flex justify-content-between">
             <h1 class="fs-4 fw-semibold">Announcements</h1>

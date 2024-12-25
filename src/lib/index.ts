@@ -14,6 +14,7 @@ export type AnnouncementResponse = {
     id: number;
     title: string;
     content: string;
+    club_name: string;
     created_at: string;
 };
 

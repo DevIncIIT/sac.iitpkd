@@ -1,25 +1,22 @@
 <script lang="ts">
-    type Announcement = {
-        title: string;
-        club_name: string;
-        image: string;
-        description: string;
-    };
-    let { title, club_name, image, description }: Announcement = $props();
+    import { image_link, type AnnouncementResponse } from "$lib";
+
+    let { title, club_name, id, content, created_at }: AnnouncementResponse = $props();
 </script>
 
 <div class="main">
-    <h4>{club_name}</h4>
-    <h2>{title}</h2>
+    <h4 class="text-xl">{club_name}</h4>
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <p>Created at: {created_at}</p>
     <div class="image-holder">
-        <img src={image} alt="{title} by {club_name}">
+        <img src={image_link(id, "Announcement")} alt="{title} by {club_name}">
     </div>
-    <p>{description}</p>
+    <p>{content}</p>
 </div>
 
 <style>
     .main {
-        background-color: #f6a55f;
+        background-color: #f6a55f93;
         display: flex;
         flex-direction: column;
         border-radius: 1em;

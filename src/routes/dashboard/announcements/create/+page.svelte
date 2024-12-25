@@ -8,7 +8,7 @@
 </script>
 <main class="flex flex-col items-center justify-center w-3/4 gap-4 ">
     <h1 class="text-3xl font-bold">Create Announcement</h1>
-    <form method="POST" class="flex flex-col w-3/4 justify-center gap-2">
+    <form method="POST" enctype="multipart/form-data" class="flex flex-col w-3/4 justify-center gap-2">
         <label for="title">Title</label>
         <Input required type="text" name="title" id="title" placeholder="An intersting title..." />
         <label for="content">Content</label>
@@ -16,6 +16,8 @@
         <label for="club">Select club</label>
         <ClubSelector options={data.clubs} callback={(club) => {selected_club = club}}/>
         <input type="text" hidden value="{selected_club}" name="club" required>
+        <label for="image">Add an image</label>
+        <Input required type="file" name="image" />
         <br>
         <Button type="submit">Create Announcement</Button>
     </form>

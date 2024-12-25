@@ -1,5 +1,8 @@
 <script lang="ts">
+    import RightSideBar from "$lib/components/Dashboard/RightSideBar.svelte";
     import ClubCard from "./clubCard.svelte";
+
+    export let data;
 
     const myClubs = [
         {
@@ -26,11 +29,11 @@
 </script>
 
 <div class="main flex flex-col mb-5">
-    <h1 class="text-[2.5rem] font-semibold mt-[2.2rem] ml-[1rem]">CLUBS</h1>
+    <h1 class="text-[2.5rem] font-semibold ml-[3rem]">CLUBS</h1>
     <div class="clubs mt-[2.5rem] ml-[3rem] flex flex-col gap-5">
         <div class="myClubs">
             <p class="text-2xl mb-[1rem]">My Clubs</p>
-            <div class="flex gap-4 flex-wrap w-[50rem]">
+            <div class="flex gap-4 flex-wrap">
                 {#each myClubs as club}
                     <ClubCard clubName={club.name} clubImage={club.img} />
                 {/each}
@@ -41,13 +44,17 @@
                 <p class="text-2xl">Other Clubs</p>
                 <button class="viewAll text-xl">View All</button>
             </div>
-            <div class="flex gap-4 flex-wrap w-[50rem]">
+            <div class="flex gap-4 flex-wrap">
                 {#each myClubs as club}
                     <ClubCard clubName={club.name} clubImage={club.img} />
                 {/each}
             </div>
         </div>
     </div>
+</div>
+
+<div>
+    <RightSideBar announcement={data.announcements[0]} event_info={data.events[0]} />
 </div>
 
 <style>

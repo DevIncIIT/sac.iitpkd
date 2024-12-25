@@ -4,7 +4,7 @@
     let { data }: { data: PageData } = $props();
 </script>
 
-<main class="p-4 h-[50vh]">
+<main class="px-4 h-[50vh]">
     <h1 class="text-4xl font-bold mb-4">{data.name.toUpperCase()}</h1>
     <div class="flex h-full py-2 gap-4">
         <div
