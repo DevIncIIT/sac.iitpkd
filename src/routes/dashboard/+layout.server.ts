@@ -4,7 +4,7 @@ import {
     VIEW_ANNOUNCEMENT_URL,
     VIEW_EVENT_URL,
     WHOAMI_URL,
-} from "$lib/urls";
+} from "$lib/server/urls";
 
 async function getUser(cookies: Cookies) {
     const response = await fetch(WHOAMI_URL, {

@@ -1,5 +1,3 @@
-import { BASE_URL } from "./urls";
-
 // place files you want to import through the `$lib` alias in this folder.
 export type EventResponse = {
     id: number;
@@ -22,5 +20,5 @@ export function image_link(
     id: number,
     attachment_type: "Announcement" | "Event" | "Thread"
 ): string {
-    return `${BASE_URL}/media/attachment?id=${id}&attachment_type=${attachment_type}`;
+    return `/cdn?id=${id}&attachment_type=${attachment_type}`;
 }

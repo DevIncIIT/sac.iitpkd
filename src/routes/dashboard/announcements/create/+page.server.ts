@@ -1,5 +1,5 @@
 // make a load function get list of clubs and returns an array of club names and ids
-import { CREATE_ANNOUNCEMENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/urls";
+import { CREATE_ANNOUNCEMENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/server/urls";
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
@@ -50,7 +50,9 @@ export const actions = {
 
         if(response.ok) {
             const announcement_response = await response.json();
+            console.log(announcement_response)
             const announcement_id = announcement_response.data;
+            console.log(announcement_id);
             const formData = new FormData();
             formData.append('announcement_id', announcement_id);
             formData.append('file', image);
@@ -62,6 +64,7 @@ export const actions = {
                 body: formData
             })
             if(file_upload_response.ok) {
+                console.log(await file_upload_response.text());
                 return redirect(302, '/dashboard');
             } else {
                 console.log(await file_upload_response.text());

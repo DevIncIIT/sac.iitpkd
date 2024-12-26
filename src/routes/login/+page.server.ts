@@ -1,4 +1,4 @@
-import { LOGIN_URL } from "$lib/urls";
+import { LOGIN_URL } from "$lib/server/urls";
 import { redirect } from "@sveltejs/kit";
 
 export const actions = {
