@@ -21,7 +21,7 @@
     <div id="Announcements">
         <div class="d-flex justify-content-between">
             <h1 class="fs-4 fw-semibold">Announcements</h1>
-            <button class="btndbd text-white rounded-3 p-2"><a href="/DashBoard/Announcements">VIEW ALL</a></button>
+            <button class="btndbd text-white rounded-3 p-2"><a href="/dashboard/announcements">VIEW ALL</a></button>
         </div>
         <div>
             <div class="pt-4 pb-4"> 
@@ -75,7 +75,7 @@
         <div class="clubs-db pt-10 pb-10">
             <div class="d-flex justify-content-between pb-4">
                 <h1 class="fs-4">My Clubs</h1>
-                <button class="btndbd text-white rounded-3 p-2"><a href="/DashBoard/Clubs">VIEW ALL</a></button>
+                <button class="btndbd text-white rounded-3 p-2"><a href="/dashboard/clubs">VIEW ALL</a></button>
             </div>
             <CarouselDashboard {images}/>
         </div>
