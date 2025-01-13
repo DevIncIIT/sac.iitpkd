@@ -1,6 +1,7 @@
 import { redirect, type Cookies } from "@sveltejs/kit";
 import type { LayoutServerLoad } from "./$types";
 import {
+    GET_CLUBS_URL,
     VIEW_ANNOUNCEMENT_URL,
     VIEW_EVENT_URL,
     WHOAMI_URL,
@@ -47,6 +48,11 @@ async function getEvents() {
     }
 }
 
+async function get_club_data() {
+    const club_response = await fetch(GET_CLUBS_URL);
+    return await club_response.json();
+}
+
 export const load: LayoutServerLoad = async ({ cookies }) => {
     if (!cookies.get("jwt")) {
         throw redirect(302, "/login");
@@ -55,11 +61,13 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
         getUser(cookies),
         getAnnouncements(),
         getEvents(),
+        get_club_data(),
     ]);
 
     return {
         profile: response[0],
         announcements: response[1],
         events: response[2],
+        clubs: response[3]
     };
 };

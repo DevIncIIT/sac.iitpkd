@@ -2,6 +2,7 @@
     import type { ClubData } from "$lib";
 
     type Request = {
+        id: number;
         username: string;
         date: Date;
     };
@@ -9,6 +10,33 @@
     let { reqs, club_data }: { reqs: Request[]; club_data: ClubData } =
         $props();
     let currDate = new Date();
+
+    function time2human(d: Date) {
+        return Math.floor(
+            (currDate.getTime() - d.getTime()) / (1000 * 3600 * 24)
+        ) >= 1
+            ? `${Math.floor((currDate.getTime() - d.getTime()) / (1000 * 3600 * 24))} days ago`
+            : Math.floor((currDate.getTime() - d.getTime()) / (1000 * 3600)) >=
+                1
+              ? `${Math.floor((currDate.getTime() - d.getTime()) / (1000 * 3600))} hours ago`
+              : Math.floor((currDate.getTime() - d.getTime()) / (1000 * 60)) >=
+                  1
+                ? `${Math.floor((currDate.getTime() - d.getTime()) / (1000 * 60))} minutes ago`
+                : `${Math.floor((currDate.getTime() - d.getTime()) / 1000)} seconds ago`;
+    }
+
+    async function accept_request(id: number) {
+        const response = await fetch("/api/accept", {
+            method: "POST",
+            body: JSON.stringify({
+                application_id: id,
+            }),
+        });
+
+        if (!response.ok) {
+            alert("Failed to accept request.");
+        }
+    }
 </script>
 
 <div class="imag"></div>
@@ -24,16 +52,16 @@
                 <button class="bullet" aria-label="bullet"></button>
                 <b>Club Name:</b>
                 {club_data.name}
-                <i
+                <!-- <i
                     class="fs-4 fa-regular fa-pen-to-square position-absolute right-10"
-                ></i>
+                ></i> -->
             </li>
             <li>
                 <button class="bullet" aria-label="bullet"></button>
                 <b>Club description:</b>
-                <i
+                <!-- <i
                 class="fs-4 fa-regular fa-pen-to-square position-absolute right-10"
-                ></i>
+                ></i> -->
             </li>
             <span class="ml-8 block">
                 {club_data.description}
@@ -58,28 +86,11 @@
             <div class="request d-flex justify-content-between pb-3 pt-3">
                 <span class="fs-5">{req.username}</span>
                 <div>
-                    <span
-                        >{Math.floor(
-                            (currDate.getTime() - req.date.getTime()) /
-                                (1000 * 3600 * 24)
-                        ) >= 1
-                            ? `${Math.floor((currDate.getTime() - req.date.getTime()) / (1000 * 3600 * 24))} days ago`
-                            : Math.floor(
-                                    (currDate.getTime() - req.date.getTime()) /
-                                        (1000 * 3600)
-                                ) >= 1
-                              ? `${Math.floor((currDate.getTime() - req.date.getTime()) / (1000 * 3600))} hours ago`
-                              : Math.floor(
-                                      (currDate.getTime() -
-                                          req.date.getTime()) /
-                                          (1000 * 60)
-                                  ) >= 1
-                                ? `${Math.floor((currDate.getTime() - req.date.getTime()) / (1000 * 60))} minutes ago`
-                                : `${Math.floor((currDate.getTime() - req.date.getTime()) / 1000)} seconds ago`}</span
-                    >
+                    <span>{time2human(req.date)}</span>
+
                     <button
                         class="ml-12 view-button pt-2 pb-2 pl-4 pr-4 rounded-5 text-white"
-                        >Accept</button
+                        onclick={() => accept_request(req.id)}>Accept</button
                     >
                 </div>
             </div>

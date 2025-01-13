@@ -1,26 +1,20 @@
 // make a load function get list of clubs and returns an array of club names and ids
-import { CREATE_EVENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/server/urls";
+import { CREATE_EVENT_URL, FILE_UPLOAD_URL } from "$lib/server/urls";
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
 // load clubs
 import type { LoadEvent } from "@sveltejs/kit";
 
-export const load = async ({ fetch }: LoadEvent) => {
-    const response = await fetch(GET_CLUBS_URL, {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    if(response.ok) {
-        const clubs = await response.json();
-        return {clubs: clubs.map((club: any) => ({
+export const load = async ({ parent }: LoadEvent) => {
+    const response = await parent();
+    const clubs = response.clubs;
+    return {
+        clubs: clubs.map((club: any) => ({
             value: club.id.toString(),
-            label: club.name
-        }))};
-    } else {
-        throw redirect(302, '/serverdown');
-    }
+            label: club.name,
+        })),
+    };
 }
 
 export const actions = {
