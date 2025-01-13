@@ -16,6 +16,18 @@ export type AnnouncementResponse = {
     created_at: string;
 };
 
+export type ClubData = {
+    name: string;
+    image: string;
+    description: string;
+    heads: {
+        name: string;
+        email: string;
+        contact_number: string;
+    }[];
+    email: string;
+};
+
 export function image_link(
     id: number,
     attachment_type: "Announcement" | "Event" | "Thread"
