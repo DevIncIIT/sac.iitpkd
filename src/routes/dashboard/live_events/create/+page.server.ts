@@ -1,5 +1,5 @@
 // make a load function get list of clubs and returns an array of club names and ids
-import { CREATE_ANNOUNCEMENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/server/urls";
+import { CREATE_EVENT_URL, FILE_UPLOAD_URL, GET_CLUBS_URL } from "$lib/server/urls";
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
@@ -39,7 +39,7 @@ export const actions = {
             };
         }
 
-        const response = await fetch(CREATE_ANNOUNCEMENT_URL, {
+        const response = await fetch(CREATE_EVENT_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,12 +55,12 @@ export const actions = {
         })
 
         if(response.ok) {
-            const announcement_response = await response.json();
-            console.log(announcement_response)
-            const announcement_id = announcement_response.data;
-            console.log(announcement_id);
+            const event_response = await response.json();
+            console.log(event_response)
+            const event_id = event_response.data;
+            console.log(event_id);
             const formData = new FormData();
-            formData.append('announcement_id', announcement_id);
+            formData.append('event_id', event_id);
             formData.append('file', image);
             const file_upload_response = await fetch(FILE_UPLOAD_URL, {
                 method: 'POST',
