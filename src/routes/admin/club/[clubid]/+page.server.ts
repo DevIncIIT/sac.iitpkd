@@ -52,12 +52,8 @@ async function get_club_data() {
 }
 
 async function get_club_applications(club_id: string) {
-    const application_response = await fetch(VIEW_CLUB_APPL_URL, {
-        method: "GET",
-        body: JSON.stringify({
-            club_id,
-        }),
-    });
+    const application_response = await fetch(
+        `${VIEW_CLUB_APPL_URL}?club_id=${club_id}`
+    );
     return await application_response.json();
 }
-

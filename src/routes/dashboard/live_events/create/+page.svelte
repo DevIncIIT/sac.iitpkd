@@ -18,6 +18,7 @@
         <input type="text" hidden value="{selected_club}" name="club" required>
         <label for="image">Date</label>
         <Input required type="date" name="date" />
+        <Input required type="time" name="time" />
         <br>
         <label for="image">Venue</label>
         <Input required type="text" name="venue" />

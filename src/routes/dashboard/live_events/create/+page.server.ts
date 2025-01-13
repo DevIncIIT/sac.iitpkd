@@ -21,17 +21,18 @@ export const actions = {
     default: async ({ cookies, request }: { cookies: any, request: Request }) => {
         const formData = await request.formData();
         const title = formData.get('title');
-        const content = formData.get('content');
+        const description = formData.get('content');
         const club = formData.get('club') as string;
         const image = formData.get('image') as File;
         const date = formData.get('date') as string;
         const venue = formData.get('venue') as string;
-        if (!(title && content && club && date && venue)) {
+        if (!(title && description && club && date && venue)) {
             return {
                 success: false,
                 message: "Invalid form data"
             };
         }
+        console.log(title, description, club, date, venue);
 
         const response = await fetch(CREATE_EVENT_URL, {
             method: 'POST',
@@ -41,12 +42,13 @@ export const actions = {
             },
             body: JSON.stringify({
                 title,
-                content,
+                description,
                 club_id: parseInt(club),
-                date,
+                starts_at: date,
                 venue
             })
         })
+        console.log(response)
 
         if(response.ok) {
             const event_response = await response.json();

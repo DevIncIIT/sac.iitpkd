@@ -5,7 +5,7 @@
     import type { LayoutServerData } from "./$types";
 
     let { data }: {data: LayoutServerData} = $props();
-    console.log(data);
+    // console.log(data);
 </script>
 
 <TopBar userName={data.profile.name}/>
