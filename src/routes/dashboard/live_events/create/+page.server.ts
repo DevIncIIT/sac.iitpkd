@@ -1,7 +1,6 @@
 // make a load function get list of clubs and returns an array of club names and ids
 import { CREATE_EVENT_URL, FILE_UPLOAD_URL } from "$lib/server/urls";
 import { redirect } from "@sveltejs/kit";
-import type { Actions } from "./$types";
 
 // load clubs
 import type { LoadEvent } from "@sveltejs/kit";
@@ -25,6 +24,7 @@ export const actions = {
         const club = formData.get('club') as string;
         const image = formData.get('image') as File;
         const date = formData.get('date') as string;
+        const time = formData.get('time') as string;
         const venue = formData.get('venue') as string;
         if (!(title && description && club && date && venue)) {
             return {
@@ -32,7 +32,8 @@ export const actions = {
                 message: "Invalid form data"
             };
         }
-        console.log(title, description, club, date, venue);
+        console.log(title, description, club, date, time, venue);
+        console.log(`${date}T${time}:00+5:30`)
 
         const response = await fetch(CREATE_EVENT_URL, {
             method: 'POST',
@@ -44,7 +45,7 @@ export const actions = {
                 title,
                 description,
                 club_id: parseInt(club),
-                starts_at: date,
+                starts_at: `${date}T${time}:00+05:30`,
                 venue
             })
         })
