@@ -14,7 +14,7 @@
                 <p class="text-2xl mb-[1rem]">Clubs</p>
                 <div class="flex gap-4 flex-wrap">
                     {#each data.clubs as club}
-                        <ClubCard clubName={club.name} clubImage={club.img} />
+                        <ClubCard clubName={club.name} clubImage={club.img} clubId={club.id} />
                     {/each}
                 </div>
             </div>
