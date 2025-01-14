@@ -1,6 +1,7 @@
 <script lang="ts">
     import RightSideBar from "$lib/components/Dashboard/RightSideBar.svelte";
     import ClubCard from "./clubCard.svelte";
+	import { image_link } from "$lib";
 
     export let data;
 
@@ -14,7 +15,7 @@
                 <p class="text-2xl mb-[1rem]">Clubs</p>
                 <div class="flex gap-4 flex-wrap">
                     {#each data.clubs as club}
-                        <ClubCard clubName={club.name} clubImage={club.img} clubId={club.id} />
+                        <ClubCard clubName={club.name} clubImage={image_link(club.id, "Club")} clubId={club.id} />
                     {/each}
                 </div>
             </div>
