@@ -6,6 +6,7 @@
 	export let description;
 	export let venue;
 	export let image;
+	export let club_id;
 	export let starts_at;
 	export let id;
 	const datestring = new Date(starts_at);
@@ -16,7 +17,7 @@
 <div class="event-card">
 	<div class="content">
 		<div class="club-logo">
-			<img src={image_link(id, "Event")} alt={club+" Logo"} class="club-logo"/>
+			<img src={image_link(club_id, "Club")} alt={club+" Logo"} class="club-logo"/>
 		</div>
 		<div class="event-info">
 			<div class="club">
@@ -31,7 +32,7 @@
 	  </div>
 		<div class="event-details">
 			<div class="event-image">
-				<img src={image_link(id, "Event")} alt={club+" Logo"} />
+				<img src={image_link(id, "Event")} alt={club+" Logo"} class="w-40 h-39 object-contain"/>
 			</div>
 			<div class="event-data">
 				<p>Time - {time}</p>
