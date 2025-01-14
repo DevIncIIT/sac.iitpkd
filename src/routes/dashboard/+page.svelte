@@ -1,13 +1,8 @@
 <script>
+    import { image_link } from "$lib";
     import CarouselDashboard from "$lib/components/Dashboard/CarouselDashboard.svelte";
 
-    let announcementList = [
-        ['Announcement Heading 1', 'placeholder.png', new Date('12/21/2024')],
-        ['Announcement Heading 2', 'placeholder.png', new Date('12/20/2024')],
-        ['Announcement Heading 3', 'placeholder.png', new Date('12/19/2024')],
-        ['Announcement Heading 4', 'placeholder.png', new Date('12/18/2024')],
-        ['Announcement Heading 5', 'placeholder.png', new Date('12/17/2024')]
-    ]
+    export let data;
     
     let images = [
         'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png'
@@ -26,12 +21,12 @@
         <div>
             <div class="pt-4 pb-4"> 
                 <ul>
-                    {#each announcementList.slice(0,4) as i,index}
+                    {#each data.announcements.slice(0,4) as announcement,index}
                             <li class="flex items-center mb-2 pb-2 position-relative">
-                                <img src={announcementList[index][1]} alt="" class="pr-10"/>
-                                {announcementList[index][0]}
+                                <img src={image_link(announcement.id, "Announcement")} alt="{announcement.title} by {announcement.club_name}" class="pr-10 h-[5rem] w-[10rem]">
+                                {announcement.title}
                                 <div class="position-absolute right-10">
-                                    {Math.floor((currDate.getTime() - announcementList[index][2].getTime())/(1000*3600*24))} days ago
+                                    {Math.floor((currDate.getTime() - new Date(announcement.created_at).getTime())/(1000*3600*24))} days ago
                                 </div>
                                 <i class="fas fa-ellipsis-h position-absolute right-0"></i>
                                 <hr/>

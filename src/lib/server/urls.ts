@@ -13,6 +13,8 @@ export const CREATE_EVENT_URL = `${BASE_URL}/event/create`;
 export const FILE_UPLOAD_URL = `${BASE_URL}/media/upload/`;
 
 export const GET_CLUBS_URL = `${BASE_URL}/club/list`;
+export const GET_MY_CLUBS_URL = `${BASE_URL}/club/list_my`;
+export const GET_FULL_CLUB_URL = `${BASE_URL}/club/get_full`; 
 export const CLUB_APPL_URL = `${BASE_URL}/club/join`;
 export const VIEW_CLUB_APPL_URL = `${BASE_URL}/club/view_applications`;
 export const ACCEPT_CLUB_APPL_URL = `${BASE_URL}/club/accept_application`;
