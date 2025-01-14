@@ -22,7 +22,7 @@
         {/if}
     </div>
     <div class="live_events">
-        <p class="text-3xl my-3">Activity</p>
+        <p class="text-3xl my-3">Announcements</p>
         <AnnouncementSideCard {announcement} />
     </div>
 </div>
