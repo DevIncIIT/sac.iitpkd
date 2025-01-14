@@ -42,6 +42,7 @@
                                     <span>Password</span>
                                     <Input class="h-10 border-2" type="password" name="password" placeholder="" required />
                                 </Label>
+                                <button class="" type="submit">Register</button>
                                 <p>Already registered? <a class="text-blue-500" href="/login">Login</a></p>
                                 <div class="all_btn items-start">
                                     <button class="btn">

@@ -1,8 +1,10 @@
 <script>
+    import { goto } from "$app/navigation";
+
     export let clubImage, clubName;
 </script>
 
-<div class="clubcard">
+<div class="clubcard" on:click={goto(`/dashboard/clubs/${clubName}`)}>
     <div class="img" style="background-image: url({clubImage});"></div>
     <div class="name text-center text-lg font-medium">{clubName}</div>
 </div>
