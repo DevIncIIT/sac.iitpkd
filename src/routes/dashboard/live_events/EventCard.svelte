@@ -3,10 +3,13 @@
 	export let clublogo;
 	export let title;
 	export let description;
-	export let time;
-	export let date;
 	export let venue;
 	export let image;
+	export let starts_at;
+	const datestring = new Date(starts_at);
+	let time = datestring.toLocaleTimeString();
+	let date = datestring.toLocaleDateString();
+	
 </script>
 
 <div class="event-card">
