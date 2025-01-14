@@ -1,14 +1,10 @@
 <script>
   import MainContent from './MainContent.svelte';
+  export let data ;
+  let events=data.events;
 </script>
 
 <div class="mt-3 ml-[2rem]">
-  <MainContent />
+  <MainContent {events}/>
 </div>
 
-<style>
-  .app-container {
-    display: flex;
-    background: #f0f0f0;
-  }
-</style>

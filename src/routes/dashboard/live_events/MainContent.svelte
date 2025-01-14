@@ -2,12 +2,7 @@
 	import EventCard from './EventCard.svelte';
 	import Button from "$lib/components/ui/button/button.svelte";
     import { goto } from '$app/navigation';
-	let dummyDescription="Announcement/Event Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.";
-	let events = [
-		{ club: "YACC", clublogo: "https://picsum.photos/100", title: "Web Dev BootCamp", description: dummyDescription, time: "10:10 PM", date: "12 March", venue: "Common Room", image: "https://picsum.photos/100/100" },
-		{ club: "Shutterbug", clublogo: "https://picsum.photos/200", title: "Photography Workshop", description: dummyDescription, time: "10:10 PM", date: "12 March", venue: "Common Room", image: "https://picsum.photos/200/300" },
-		{ club: "Voxel", clublogo: "https://picsum.photos/300", title: "Photoshop Workshop", description: dummyDescription, time: "10:10 PM", date: "12 March", venue: "Common Room", image: "https://picsum.photos/300/300" },
-	];
+	export let events = [];
 </script>
 
 <div class="main-content">
