@@ -6,7 +6,7 @@
       <img src="/SACTagline-removebg.png" alt="SAC Tagline" style="width: 350px; height: 45px; margin-left: -1rem" />
       <div style="border: 1px solid rgba(255, 255, 255, 1); width: 290px; height: 0px; margin-top: 10px;"></div>
       <p style="color: white; margin-top: 10px;">Copyright © 2023. All rights reserved.</p>
-      <a style="color: white;" href="/constitution.pdf">Student Constitution</a>
+      <a style="color: lightblue;" href="/constitution.pdf">Student Constitution</a>
     </div>
   </div>
   
