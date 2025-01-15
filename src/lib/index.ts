@@ -30,7 +30,7 @@ export type ClubData = {
 
 export function image_link(
     id: number,
-    attachment_type: "Announcement" | "Event" | "Thread"
+    attachment_type: "Announcement" | "Event" | "Thread" | "Club"
 ): string {
     return `/cdn?id=${id}&attachment_type=${attachment_type}`;
 }
