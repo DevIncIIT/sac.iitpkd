@@ -45,8 +45,6 @@
                     onclick={() => handleClick(index)}
                     href={index === 0
                         ? `/dashboard/`
-                        : index === 4
-                          ? `/dashboard/live_events`
                           : `/dashboard/${section_button_text.toLowerCase().replace("-", "_")}`}
                     class="text-black text-decoration-none web-link"
                 >
