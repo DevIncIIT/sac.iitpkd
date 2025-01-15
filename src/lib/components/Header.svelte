@@ -2,16 +2,16 @@
   import { goto } from '$app/navigation';
   export let LoggedIn: boolean;
 </script>
-
 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px;  padding-inline: 3rem">
+  <a href="/" style="display: flex; text-decoration: none;">
   <div style="display: flex; align-items: center;">
-    <img src="/SACLogo.svg" alt="SAC logo" style="width:94px; height: 111px; margin-right: 10px;" />
-    <img src="/SACTagline.svg" alt="SAC Tagline" style="width:291; height: 39px;" />
-  </div>
+      <img src="/SACLogo.svg" alt="SAC logo" style="width:94px; height: 111px; margin-right: 10px;" />
+      <img src="/SACTagline.svg" alt="SAC Tagline" style="width:291; height: 39px;" />
+    </div>
+  </a>
 
   <div class="Center text-[1.3rem]" style="display: flex; gap: 4rem;">
     <a class="navButton" href="/">Home</a>
-    <a class="navButton" href="#about">About Us</a>
     <a class="navButton" href="/council">Council</a>
     <a class="navButton" href="/faculty">Faculty</a>
     <a class="navButton" href="/maintainers">Maintainers</a>

@@ -3,7 +3,7 @@
 </script>
 
 <div class="d-flex justify-content-between">
-    <a href='/'>
+    <a href="/" style="display: flex; text-decoration: none;">
         <div class="left-logo d-flex align-items-center mt-4 mb-4 ml-3">
             <img id="img-logo" src="/SACLogo.svg" alt="logo"/>
             <img id="text-logo" src="/SACTagline.svg" alt="logo-text"/>
