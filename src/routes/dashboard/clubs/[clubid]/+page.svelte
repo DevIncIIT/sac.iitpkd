@@ -7,24 +7,22 @@
     let { data }: { data: PageData } = $props();
     let club = $derived(data.data);
 
-    let is_already_member: boolean = $state(false);
-    let has_applied: boolean = $state(false);
-
-    onMount(() => {
-        if (data.my_clubs.filter((my_club: any) => my_club.id == club.id).length) {
-            is_already_member = true;
-        } else if (
-            data.my_applied_clubs.filter(
+    let is_already_member: boolean = $derived(data.my_clubs.filter((my_club: any) => my_club.id == club.id).length);
+    let has_applied: boolean = $state(data.my_applied_clubs.filter(
                 (applied_club: any) => applied_club.id == club.id,
-            ).length
-        ) {
-            has_applied = true;
+            ).length);
+    
+    const submit = () => {
+        return async ({result} : {result: any}) => {
+            if(result.type == 'success' && result.data.success){
+                has_applied = true;
+            }
         }
-    });
+    }
 </script>
 
-<form id="join" action="?/join" method="post" use:enhance>
-    <input type="hidden" name="clubid" bind:value={club.id} />
+<form id="join" action="?/join" method="post" use:enhance={submit}>
+    <input type="hidden" name="clubid" value={club.id} />
 </form>
 
 <main class="px-4 h-[50vh] w-full">

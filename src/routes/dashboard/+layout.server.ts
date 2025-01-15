@@ -2,6 +2,7 @@ import { redirect, type Cookies } from "@sveltejs/kit";
 import type { LayoutServerLoad } from "./$types";
 import {
     GET_CLUBS_URL,
+    GET_MY_APPL_CLUBS_URL,
     GET_MY_CLUBS_URL,
     VIEW_ANNOUNCEMENT_URL,
     VIEW_EVENT_URL,
@@ -67,13 +68,12 @@ async function get_my_clubs(cookies: Cookies) {
 }
 
 async function get_my_applied_clubs(cookies: Cookies) {
-    const response = await fetch(GET_MY_CLUBS_URL, {
+    const response = await fetch(GET_MY_APPL_CLUBS_URL, {
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${cookies.get("jwt")}`,
         },
     });
-    // console.log(await response.text());
     return await response.json();
 }
 
