@@ -7,6 +7,7 @@ import {
     VIEW_EVENT_URL,
     WHOAMI_URL,
 } from "$lib/server/urls";
+import type { FetchFunction } from "vite";
 
 async function getUser(cookies: Cookies) {
     const response = await fetch(WHOAMI_URL, {
@@ -54,9 +55,14 @@ async function get_club_data() {
     return await club_response.json();
 }
 
-async function get_my_clubs() {
-    const response = await fetch(GET_MY_CLUBS_URL);
-    console.log(await response.text());
+async function get_my_clubs(cookies: Cookies) {
+    const response = await fetch(GET_MY_CLUBS_URL, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${cookies.get("jwt")}`,
+        },
+    });
+    // console.log(await response.text());
     return await response.json();
 }
 
@@ -69,7 +75,7 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
         getAnnouncements(),
         getEvents(),
         get_club_data(),
-        get_my_clubs(),
+        get_my_clubs(cookies),
     ]);
 
     return {
