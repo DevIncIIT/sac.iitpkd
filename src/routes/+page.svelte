@@ -17,12 +17,7 @@
 
     const images = ["/carousel.jpeg", "/carousel.jpeg", "/carousel.jpeg"];
 
-    let isLoading = true;
-
-    // Hide the loading page after 3 seconds
-    setTimeout(() => {
-        isLoading = false;
-    }, 1000);
+    let isLoading = false;
 </script>
 
 {#if isLoading}
