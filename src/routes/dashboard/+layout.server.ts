@@ -2,6 +2,7 @@ import { redirect, type Cookies } from "@sveltejs/kit";
 import type { LayoutServerLoad } from "./$types";
 import {
     GET_CLUBS_URL,
+    GET_MY_CLUBS_URL,
     VIEW_ANNOUNCEMENT_URL,
     VIEW_EVENT_URL,
     WHOAMI_URL,
@@ -53,6 +54,12 @@ async function get_club_data() {
     return await club_response.json();
 }
 
+async function get_my_clubs() {
+    const response = await fetch(GET_MY_CLUBS_URL);
+    console.log(await response.text());
+    return await response.json();
+}
+
 export const load: LayoutServerLoad = async ({ cookies }) => {
     if (!cookies.get("jwt")) {
         throw redirect(302, "/login");
@@ -62,12 +69,14 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
         getAnnouncements(),
         getEvents(),
         get_club_data(),
+        get_my_clubs(),
     ]);
 
     return {
         profile: response[0],
         announcements: response[1],
         events: response[2],
-        clubs: response[3]
+        clubs: response[3],
+        my_clubs: response[4]
     };
 };

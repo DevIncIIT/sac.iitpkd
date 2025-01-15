@@ -41,28 +41,28 @@
                 <div class="status-comp">
                     <div class="status-items">
                         <img src="club.svg" alt="club-icon" style="height: 20px;"/>
-                        <div>5 Clubs</div>
+                        <div>Coming Soon</div>
                     </div>
                 </div>
                 <div class="vert-line"></div>
                 <div class="status-comp">
                     <div class="status-items">
                         <img src="club.svg" alt="club-icon" style="height: 20px;"/>
-                        <div>10 Events</div>
+                        <div>Coming Soon</div>
                     </div>
                 </div>
                 <div class="vert-line"></div>
                 <div class="status-comp">
                     <div class="status-items">
                         <img src="club.svg" alt="club-icon" style="height: 20px;"/>
-                        <div>2 ongoing projects</div>
+                        <div>Coming Soon</div>
                     </div>
                 </div>
                 <div class="vert-line"></div>
                 <div class="status-comp">
                     <div class="status-items">
                         <img src="club.svg" alt="club-icon" style="height: 20px;"/>
-                        <div>Add functionalities</div>
+                        <div>Coming Soon</div>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 <h1 class="fs-4">My Clubs</h1>
                 <button class="btndbd text-white rounded-3 p-2"><a href="/dashboard/clubs">VIEW ALL</a></button>
             </div>
-            <CarouselDashboard {images}/>
+            <CarouselDashboard my_clubs={data.my_clubs}/>
         </div>
     </div>
 </div>
