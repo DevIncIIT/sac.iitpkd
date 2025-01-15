@@ -6,6 +6,7 @@ export const WHOAMI_URL = `${BASE_URL}/auth/whoami`;
 
 export const CREATE_ANNOUNCEMENT_URL = `${BASE_URL}/announcement/create`;
 export const VIEW_ANNOUNCEMENT_URL = `${BASE_URL}/announcement/view`;
+export const PUBLIC_ANNOUNCEMENT_URL = `${BASE_URL}/announcement/public`;
 
 export const VIEW_EVENT_URL = `${BASE_URL}/event/view`;
 export const CREATE_EVENT_URL = `${BASE_URL}/event/create`;
