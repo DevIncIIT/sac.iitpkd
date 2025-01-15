@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Header from "$lib/components/Header.svelte";
     export let councils = [
     {
       councilName: 'Council 1',
@@ -58,7 +57,6 @@
 </script>
 
 
-<Header />
 <div class="flex justify-center">
     
     <div class=" w-[85%]  grid grid-cols-1 md:grid-cols-2 gap-8">
