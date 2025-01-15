@@ -11,6 +11,7 @@
         // "Opportunities",
         // "Budget",
         "More",
+        "Logout"
     ];
     let selectedInd = writable(-2);
     onMount(() => {
@@ -62,7 +63,7 @@
                             src="/{section_button_text}.svg"
                             alt="{section_button_text} icon"
                         />
-                        <span class="button-text">{section_button_text}</span>
+                        <span class="button-text {section_button_text == 'Logout' ? 'text-red-600' : ''}">{section_button_text}</span>
                     </li>
                 </a>
             {/each}

@@ -3,10 +3,12 @@
 </script>
 
 <div class="d-flex justify-content-between">
-    <div class="left-logo d-flex align-items-center mt-4 mb-4 ml-3">
-        <img id="img-logo" src="/SACLogo.svg" alt="logo"/>
-        <img id="text-logo" src="/SACTagline.svg" alt="logo-text"/>
-    </div>
+    <a href='/'>
+        <div class="left-logo d-flex align-items-center mt-4 mb-4 ml-3">
+            <img id="img-logo" src="/SACLogo.svg" alt="logo"/>
+            <img id="text-logo" src="/SACTagline.svg" alt="logo-text"/>
+        </div>
+    </a>
     <!-- <button onclick={hamburger} aria-label="hamburgerButton" id="ham" class="p-4">
         <i class="fa-solid fa-bars fa-2xl"></i>
     </button> -->

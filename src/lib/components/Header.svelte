@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
   import { goto } from '$app/navigation';
+  export let LoggedIn: boolean;
 </script>
 
 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px;  padding-inline: 3rem">
@@ -17,7 +18,11 @@
 
 
   <div>
+    {#if LoggedIn}
+    <button class="Signin" on:click={() => goto('/dashboard')}>Dashboard</button>
+    {:else}
     <button class="Signin" on:click={() => goto('/login')} >Sign in</button>
+    {/if}
   </div>
 </div>
 <style>

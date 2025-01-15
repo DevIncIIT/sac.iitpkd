@@ -3,10 +3,6 @@
     import CarouselDashboard from "$lib/components/Dashboard/CarouselDashboard.svelte";
 
     export let data;
-    
-    let images = [
-        'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png', 'placeholderClub.png'
-    ]
 
     let currDate = new Date();
 </script>
