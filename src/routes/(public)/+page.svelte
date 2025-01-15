@@ -28,7 +28,7 @@
         href="/constitution.pdf">Student Constitution</a
     >
     <Carousel {images} />
-    <AnnoucementList {announcements} />
+    <AnnoucementList {announcements} loggedIn={data.loggedIn} />
     <MainPageContent
         heading="Gallery"
         content="Photos from various events and activities"
