@@ -20,9 +20,6 @@ importers:
       flowbite-svelte:
         specifier: ^0.47.4
         version: 0.47.4(rollup@4.27.2)(svelte@5.2.0)
-      pnpm:
-        specifier: ^9.15.4
-        version: 9.15.4
       svelte-awesome:
         specifier: ^3.3.5
         version: 3.3.5(svelte@5.2.0)
@@ -887,11 +884,6 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
-
-  pnpm@9.15.4:
-    resolution: {integrity: sha512-stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==}
-    engines: {node: '>=18.12'}
-    hasBin: true
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -1866,8 +1858,6 @@ snapshots:
   pify@2.3.0: {}
 
   pirates@4.0.6: {}
-
-  pnpm@9.15.4: {}
 
   postcss-import@15.1.0(postcss@8.4.49):
     dependencies:
