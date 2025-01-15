@@ -66,6 +66,17 @@ async function get_my_clubs(cookies: Cookies) {
     return await response.json();
 }
 
+async function get_my_applied_clubs(cookies: Cookies) {
+    const response = await fetch(GET_MY_CLUBS_URL, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${cookies.get("jwt")}`,
+        },
+    });
+    // console.log(await response.text());
+    return await response.json();
+}
+
 export const load: LayoutServerLoad = async ({ cookies }) => {
     if (!cookies.get("jwt")) {
         throw redirect(302, "/login");
@@ -76,6 +87,7 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
         getEvents(),
         get_club_data(),
         get_my_clubs(cookies),
+        get_my_applied_clubs(cookies),
     ]);
 
     return {
@@ -83,6 +95,7 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
         announcements: response[1],
         events: response[2],
         clubs: response[3],
-        my_clubs: response[4]
+        my_clubs: response[4],
+        my_applied_clubs: response[5]
     };
 };
