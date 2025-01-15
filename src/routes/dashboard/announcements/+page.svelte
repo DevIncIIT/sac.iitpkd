@@ -10,7 +10,7 @@
         <h1 class="text-4xl font-bold">Announcements</h1>
         <Button type="button" on:click={() => goto("/dashboard/announcements/create")}>Create Announcement</Button>
     </div>
-    <div class="grid grid-cols-4 py-4">
+    <div class="grid grid-cols-3 py-4 gap-4">
         {#each data.announcements as announcement}
             <AnnouncementCard {...announcement} />
         {/each}

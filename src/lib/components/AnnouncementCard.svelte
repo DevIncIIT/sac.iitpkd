@@ -32,7 +32,7 @@
         display: flex;
         justify-content: center;
         border-radius: 1em;
-        border: black 2px solid;
+        /* border: black 2px solid; */
     }
     img {
         height: 100%;
