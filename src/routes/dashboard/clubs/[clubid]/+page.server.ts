@@ -37,5 +37,6 @@ export const actions: Actions = {
                 club_id: parseInt(club_id)
             })
         })
+        return await response.json();
     }
 };
