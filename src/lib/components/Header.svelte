@@ -11,7 +11,6 @@
 
   <div class="Center text-[1.3rem]" style="display: flex; gap: 4rem;">
     <a class="navButton" href="/">Home</a>
-    <a class="navButton" href="#about">About Us</a>
     <a class="navButton" href="/council">Council</a>
     <a class="navButton" href="/faculty">Faculty</a>
     <a class="navButton" href="/maintainers">Maintainers</a>
