@@ -1,19 +1,58 @@
 <script lang="ts">
+    import { enhance } from "$app/forms";
     import { image_link } from "$lib";
+    import { onMount } from "svelte";
     import type { PageData } from "./$types";
 
     let { data }: { data: PageData } = $props();
     let club = $derived(data.data);
+
+    let is_already_member: boolean = $state(false);
+    let has_applied: boolean = $state(false);
+
+    onMount(() => {
+        if (data.my_clubs.filter((my_club: any) => my_club.id == club.id).length) {
+            is_already_member = true;
+        } else if (
+            data.my_applied_clubs.filter(
+                (applied_club: any) => applied_club.id == club.id,
+            ).length
+        ) {
+            has_applied = true;
+        }
+    });
 </script>
 
+<form id="join" action="?/join" method="post" use:enhance>
+    <input type="hidden" name="clubid" bind:value={club.id} />
+</form>
+
 <main class="px-4 h-[50vh] w-full">
-    <h1 class="text-4xl font-bold mb-4">{club.name.toUpperCase()}</h1>
+    <div class="flex gap-4 items-center mb-4">
+        <h1 class="text-4xl font-bold">{club.name.toUpperCase()}</h1>
+        {#if !is_already_member && has_applied}
+            <button
+                form="join"
+                type="submit"
+                class="px-3 py-2 rounded-2xl text-xl"
+                style="background: #ffcca0;"
+                disabled>Pending</button
+            >
+        {:else if !is_already_member}
+            <button
+                form="join"
+                type="submit"
+                class="px-3 py-2 rounded-2xl text-xl"
+                style="background: #ffcca0;">Join</button
+            >
+        {/if}
+    </div>
     <div class="flex h-full py-2 gap-4">
         <div
             class="bg-cover bg-center bg-no-repeat rounded-lg min-w-64"
             style="background-image: url({image_link(
                 club.id,
-                'Club'
+                'Club',
             )}); flex: 1;"
         ></div>
         <p style="flex: 2;">
