@@ -8,7 +8,6 @@ import {
     VIEW_EVENT_URL,
     WHOAMI_URL,
 } from "$lib/server/urls";
-import type { FetchFunction } from "vite";
 
 async function getUser(cookies: Cookies) {
     const response = await fetch(WHOAMI_URL, {

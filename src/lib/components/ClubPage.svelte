@@ -84,9 +84,9 @@
         </div>
         {#each reqs as req}
             <div class="request d-flex justify-content-between pb-3 pt-3">
-                <span class="fs-5">{req.username}</span>
+                <span class="fs-5">{req.user_name} ({req.user_email})</span>
                 <div>
-                    <span>{time2human(req.date)}</span>
+                    <span>{time2human(new Date(req.created_at))}</span>
 
                     <button
                         class="ml-12 view-button pt-2 pb-2 pl-4 pr-4 rounded-5 text-white"
