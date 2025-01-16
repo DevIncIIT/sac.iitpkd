@@ -1,5 +1,8 @@
 <script lang="ts">
     import MainPageContent from "$lib/components/Dashboard/MainPageContent.svelte";
+    import { Input } from "$lib/components/ui/input/index.ts";
+    import { Label } from "$lib/components/ui/label/index.ts";
+    import Button from "$lib/components/ui/button/button.svelte";
 </script>
 
 <div class="min-h-screen bg-white">
@@ -96,4 +99,36 @@
             content="DevInc is at the forefront of technological innovation at IIT Palakkad. We develop web applications, mobile solutions, and software tools that serve the campus community. Our team comprises passionate developers, designers, and problem solvers who work together to create meaningful impact through technology. We believe in learning by doing and fostering a collaborative environment where creativity meets technical expertise."
         />
     </div>
+    <div class=" h-[50vh] flex items-center justify-center">
+        <div class="h-[50vh] flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg w-full max-w-[55vw]">
+              <div class="flex w-full flex-col gap-1.5 items-center">
+                <form method="POST">
+          
+                  <label for="email-2" class="font-medium text-gray-700 w-full">Email</label>
+                  <input
+                    type="email"
+                    id="email-2"
+                    placeholder="Email"
+                    name="email"
+                    class="w-full mb-3 border border-gray-300 p-2 rounded-md"
+                  />
+          
+                  <label for="text" class="font-medium text-gray-700 w-full">Grievance</label>
+                  <textarea
+                    id="text"
+                    placeholder="Enter your grievances"
+                    name="griv"
+                    rows="4"
+                    class="w-full mb-1 border border-gray-300 p-2 rounded-md"
+                  ></textarea>
+          
+                  <button type="submit" class="mt-2 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 </div>
