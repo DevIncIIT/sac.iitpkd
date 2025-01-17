@@ -16,6 +16,7 @@
         return async ({result} : {result: any}) => {
             if(result.type == 'success' && result.data.success){
                 has_applied = true;
+                //
             }
         }
     }
