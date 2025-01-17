@@ -1,6 +1,6 @@
 <script lang="ts">
     import { image_link, type EventResponse } from "$lib";
-
+    import { time2human } from "$lib";
     export let event_info: EventResponse;
 </script>
 
@@ -13,7 +13,7 @@
                 <p class="event_name text-xl font-semibold">{event_info.title}</p>
             </div>
         </div>
-        <div class="whitebar">{event_info.starts_at}</div>
+        <div class="whitebar">{time2human(new Date(event_info.starts_at))}</div>
     </div>
     <div class="card_body text-justify mt-2">
         {event_info.description}

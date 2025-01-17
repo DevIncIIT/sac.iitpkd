@@ -20,3 +20,6 @@ export const GET_FULL_CLUB_URL = `${BASE_URL}/club/get_full`;
 export const CLUB_APPL_URL = `${BASE_URL}/club/join`;
 export const VIEW_CLUB_APPL_URL = `${BASE_URL}/club/view_applications`;
 export const ACCEPT_CLUB_APPL_URL = `${BASE_URL}/club/accept_application`;
+
+export const GET_GRIEVANCE_URL = `${BASE_URL}/grievance/list`;
+export const CREATE_GRIEVANCE_URL = `${BASE_URL}/grievance/create`;
