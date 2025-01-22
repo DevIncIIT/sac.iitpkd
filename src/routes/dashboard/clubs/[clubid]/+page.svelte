@@ -7,19 +7,24 @@
     let { data }: { data: PageData } = $props();
     let club = $derived(data.data);
 
-    let is_already_member: boolean = $derived(data.my_clubs.filter((my_club: any) => my_club.id == club.id).length);
-    let has_applied: boolean = $state(data.my_applied_clubs.filter(
-                (applied_club: any) => applied_club.id == club.id,
-            ).length);
-    
+    let is_already_member: boolean = $derived(
+        data.my_clubs.filter((my_club: any) => my_club.id == club.id).length,
+    );
+    let has_applied: boolean = $state(
+        data.my_applied_clubs.filter(
+            (applied_club: any) => applied_club.id == club.id,
+        ).length,
+    );
+
     const submit = () => {
-        return async ({result} : {result: any}) => {
-            if(result.type == 'success' && result.data.success){
+        return async ({ result }: { result: any }) => {
+            if (result.type == "success" && result.data.success) {
                 has_applied = true;
                 //
             }
-        }
-    }
+        };
+    };
+    let dialog;
 </script>
 
 <form id="join" action="?/join" method="post" use:enhance={submit}>
@@ -29,6 +34,28 @@
 <main class="px-4 h-[50vh] w-full">
     <div class="flex gap-4 items-center mb-4">
         <h1 class="text-4xl font-bold">{club.name.toUpperCase()}</h1>
+        <dialog bind:this={dialog}>
+            <label
+                for="self-description"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your description</label
+            >
+            <textarea
+                id="self-description"
+                rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Tell about yourself"
+                form="join"
+                required
+            ></textarea>
+            <button
+                type="submit"
+                class="px-3 py-2 rounded-2xl text-xl"
+                style="background: #ffcca0;"
+                form="join"
+                on:click={() => dialog.close()}>Submit</button
+            >
+        </dialog>
         {#if !is_already_member && has_applied}
             <button
                 form="join"
@@ -39,10 +66,9 @@
             >
         {:else if !is_already_member}
             <button
-                form="join"
-                type="submit"
                 class="px-3 py-2 rounded-2xl text-xl"
-                style="background: #ffcca0;">Join</button
+                style="background: #ffcca0;"
+                on:click={() => dialog.showModal()}>Join</button
             >
         {/if}
     </div>
